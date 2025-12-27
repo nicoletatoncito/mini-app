@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>Mini App | Task Tracker</title>
+    <meta name="description" content="A clean, responsive task tracker built with HTML, CSS and JavaScript." />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="bg" aria-hidden="true"></div>
+
+    <header class="header container">
+      <a class="brand" href="#">
+        <span class="dot"></span>
+        <span>Mini<span class="accent">App</span></span>
+      </a>
+      <p class="tag">Task Tracker • LocalStorage • Responsive</p>
+    </header>
+
+    <main class="container">
+      <section class="card">
+        <h1>Task Tracker</h1>
+        <p class="sub">
+          Add tasks, mark them as done, filter the list, and keep everything saved in your browser.
+        </p>
+
+        <form class="form" id="taskForm" autocomplete="off">
+          <input
+            id="taskInput"
+            type="text"
+            placeholder="Write a task and press Enter…"
+            aria-label="Task name"
+          />
+          <button class="btn" type="submit">Add</button>
+        </form>
+
+        <div class="toolbar">
+          <div class="filters" role="tablist" aria-label="Task filters">
+            <button class="chip active" type="button" data-filter="all">All</button>
+            <button class="chip" type="button" data-filter="active">Active</button>
+            <button class="chip" type="button" data-filter="completed">Completed</button>
+          </div>
+
+          <button class="btn ghost" id="clearCompleted" type="button">Clear completed</button>
+        </div>
+
+        <ul class="list" id="taskList" aria-label="Task list"></ul>
+
+        <footer class="meta">
+          <p><span id="count">0</span> tasks</p>
+          <p class="muted">Built with HTML/CSS/JS</p>
+        </footer>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
